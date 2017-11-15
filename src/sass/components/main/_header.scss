@@ -1,0 +1,15 @@
+header {
+  height: $header-height;
+  width: 100%;
+  background: $blue-med;
+  position: absolute;
+  top:0;
+
+  .site-name{
+    float: right;
+    height: $header-height;
+    line-height: $header-height;
+    padding: 0 20px 0 0;
+    color: $white;
+  }
+}
