@@ -14,6 +14,8 @@ var buffer = require('vinyl-buffer');
 // browser-sync
 var browserSync = require ('browser-sync');
 var reload = browserSync.reload;
+var historyApiFallback = require('connect-history-api-fallback');
+// var modRewrite  = require('connect-modrewrite');
 
 // CSS
 var sass = require('gulp-sass');
@@ -81,8 +83,9 @@ gulp.task('serve', function(){
       open: true,
       startPath: './',
       reloadOnRestart: true,
-      reloadDelay: 500,
-      https: false
+      reloadDelay: 1000,
+      https: false,
+      middleware: [ historyApiFallback() ]
   });
 });
 
