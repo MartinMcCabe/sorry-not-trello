@@ -5,31 +5,53 @@ import { connect } from 'react-redux'
 //   //
 // } from '../actions/actionCreators'
 
-// import BoardItem from '../components/boardItem'
+import List from '../containers/list'
 
 class Board extends Component {
   constructor(props) {
     super(props)
   }
 
+  renderLists(key) {
+    const { lists } = this.props
+    const { id } = this.props.match.params
+    if(lists[key].board == id){
+      return (
+        <List key={key} id={key} />
+      )
+    }else{
+      return null
+    }
+  }
+
   render() {
-    const { boards } = this.props
-    console.log(boards)
+    const { boards, lists } = this.props
+    const { id } = this.props.match.params
+
     return (
       <div className='board'>
-          <h3 className='board--name'>board name here</h3>
-          {/* <div className='boards--items'>
-            {Object.keys(boards).map(this.renderBoard.bind(this))}
-          </div> */}
+        <div className='board--container'>
+          <div className='board--content'>
+            <div className='board--name'>{boards[id].name}</div>
+            <div className='board--lists-wrapper'>
+              <div className='board--lists-container'>
+
+                  {Object.keys(lists).map(this.renderLists.bind(this))}
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
 }
 
 function mapStateToProps( state ){
-  const { boards } = state
+  const { boards, lists } = state
   return {
-    boards
+    boards,
+    lists
   }
 }
 

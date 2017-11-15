@@ -2,8 +2,8 @@ header {
   height: $header-height;
   width: 100%;
   background: $blue-med;
-  position: absolute;
-  top:0;
+  position: relative;
+  flex: none;
 
   .site-name{
     float: right;

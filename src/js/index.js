@@ -8,6 +8,7 @@ import { ConnectedRouter } from 'react-router-redux'
 import { store, history } from './store'
 import PageTemplate from './containers/pageTemplate'
 import Boards from './containers/boards'
+import Board from './containers/board'
 import NotFound from './containers/notFound'
 
 render(
@@ -16,10 +17,11 @@ render(
       <PageTemplate>
         <Switch>
           <Route exact path='/' component={ Boards } />
+          <Route exact path='/board/:id' component={ Board } />
           <Route component={ NotFound } />
         </Switch>
       </PageTemplate>
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('swapi-app')
+  document.getElementById('not-trello')
 )

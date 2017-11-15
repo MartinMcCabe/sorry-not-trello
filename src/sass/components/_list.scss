@@ -1,0 +1,33 @@
+.list{
+  width: 270px;
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+  margin: 0 5px;
+  &:first-child{
+    margin: 0 5px 0 0;
+  }
+
+  &--content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-height: 100%;
+    background: $grey-light;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  &--name {
+    flex: none;
+  }
+
+  &--cards-holder {
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+
+  &--btn-add {
+    height: 30px;
+  }
+}

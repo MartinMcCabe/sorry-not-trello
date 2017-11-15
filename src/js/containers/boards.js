@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 // } from '../actions/actionCreators'
 
 import BoardItem from '../components/boardItem'
+import AddBoardItem from '../containers/addBoardItem'
 
 class Boards extends Component {
   constructor(props) {
@@ -22,13 +23,13 @@ class Boards extends Component {
   render() {
 
     const { boards } = this.props
-    console.log(boards)
     return (
       <div className='boards'>
         <div className='content'>
           <h3 className='boards--collection-name'>My Boards</h3>
           <div className='boards--items'>
             {Object.keys(boards).map(this.renderBoard.bind(this))}
+            <AddBoardItem />
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 .board-item{
   background: $blue-med;
-  width: 250px;
+  width: 230px;
   height: 100px;
   border-radius: 30px;
   color: $white;
@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 0 5px 10px 5px;
 
   h2{
     margin: 0;
