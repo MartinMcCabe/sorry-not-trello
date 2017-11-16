@@ -81,7 +81,7 @@ gulp.task('serve', function(){
       server: true,
       port: 3000,
       open: true,
-      startPath: './',
+      startPath: '',
       reloadOnRestart: true,
       reloadDelay: 1000,
       https: false,
