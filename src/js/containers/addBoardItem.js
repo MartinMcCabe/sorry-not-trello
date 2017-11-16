@@ -19,9 +19,7 @@ class AddBoardItem extends Component {
   }
 
   checkValue(event) {
-    // if(event.target.value != ''){
       this.props.dispatch(setBoardNameValue(event.target.value))
-    // }
   }
 
   createBoard(){
