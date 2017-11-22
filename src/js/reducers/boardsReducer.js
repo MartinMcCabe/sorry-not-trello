@@ -1,5 +1,6 @@
 import {
-  CREATE_BOARD
+  CREATE_BOARD,
+  ACTIVATE_ADD_LIST
 } from '../actions/actionTypes'
 
 

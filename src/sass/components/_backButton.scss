@@ -1,0 +1,25 @@
+.btn-back{
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  background: none;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &:after {
+    content: '⬅︎';
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &:hover {
+    color: $grey-light;
+    margin-left: -3px;
+  }
+}

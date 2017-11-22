@@ -16,35 +16,4 @@
     font-size: 45px;
   }
 
-
-  &--input {
-    border: 1px solid $black;
-    background: none;
-    color: $white;
-    height: 30px;
-    font-size: 15px;
-    border-radius: 30px;
-    padding: 0 10px;
-    font-family: $nt-main-font;
-    &::placeholder{
-      color: $white;
-    }
-  }
-
-  &--btn-add {
-    width: 130px;
-    background: none;
-    border: 1px solid $black;
-    border-radius: 40px;
-    height: 40px;
-    font-size: 18px;
-    transition: all 0.4s;
-    cursor: pointer;
-
-    &:hover {
-      color: $white;
-      border: 1px solid $white;
-    }
-  }
-
 }

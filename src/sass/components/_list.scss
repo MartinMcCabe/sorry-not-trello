@@ -20,11 +20,13 @@
 
   &--name {
     flex: none;
+    font-weight: bold;
   }
 
   &--cards-holder {
     flex: 1 1 auto;
     overflow-y: auto;
+    margin-bottom: 10px;
   }
 
   &--btn-add {

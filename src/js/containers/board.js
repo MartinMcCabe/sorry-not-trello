@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 //   //
 // } from '../actions/actionCreators'
 
-import List from '../containers/list'
+import List from './list'
+import AddList from './addList'
 
 class Board extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Board extends Component {
     const { id } = this.props.match.params
     if(lists[key].board == id){
       return (
-        <List key={key} id={key} />
+        <List key={key} id={key} list={lists[key]}/>
       )
     }else{
       return null
@@ -35,9 +36,8 @@ class Board extends Component {
             <div className='board--name'>{boards[id].name}</div>
             <div className='board--lists-wrapper'>
               <div className='board--lists-container'>
-
                   {Object.keys(lists).map(this.renderLists.bind(this))}
-
+                  <AddList board={boards[id]} id={id} />
               </div>
             </div>
           </div>

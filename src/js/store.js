@@ -7,51 +7,49 @@ import rootReducer from './reducers/rootReducer'
 const defaultState = {
   boards:{
     'welcome': {
-      name: 'Welcome board',
-      add_list_active:false
+      name: 'Welcome board'
     }
   },
   lists:{
     'first_todo_list':{
       name:'To do',
-      board: 'welcome',
-      add_card_active:false
+      board: 'welcome'
     },
     'another_list':{
       name:'Some list',
-      board: 'welcome',
-      add_card_active:false
+      board: 'welcome'
     }
   },
   cards:{
     'todoItem':{
-      description: 'Add more tasks',
+      name: 'this is a card',
+      description: '',
       list: 'first_todo_list'
     },
     'todoItem1':{
-      description: 'Add more tasks',
-      list: 'first_todo_list'
+      name: 'this is also a card',
+      description: '',
+      list: 'another_list'
     },
     'todoItem2':{
-      description: 'Add more tasks',
+      name: 'click a card to edit it',
+      description: '',
       list: 'first_todo_list'
     },
     'todoItem3':{
-      description: 'Add more tasks',
-      list: 'first_todo_list'
-    },
-    'todoItem4':{
-      description: 'Add more tasks',
-      list: 'first_todo_list'
-    },
-    'todoItem5':{
-      description: 'Add more tasks',
+      name: 'drag a card to another list',
+      description: '',
       list: 'first_todo_list'
     }
   },
   app:{
     add_board_active: false,
-    new_board_name: ''
+    new_board_name: '',
+    add_list_active: false,
+    new_list_name: '',
+    add_card_active: false,
+    new_card_name: '',
+    current_list_id: ''
   }
 }
 

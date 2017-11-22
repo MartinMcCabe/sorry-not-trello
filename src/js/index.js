@@ -14,7 +14,7 @@ import NotFound from './containers/notFound'
 render(
   <Provider store={ store }>
     <ConnectedRouter history={ history }>
-      <PageTemplate>
+      <PageTemplate  history={ history }>
         <Switch>
           <Route exact path='/' component={ Boards } />
           <Route exact path='/board/:id' component={ Board } />

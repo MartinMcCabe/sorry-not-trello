@@ -7,7 +7,7 @@ import {
   createBoard
 } from '../actions/actionCreators'
 
-// import BoardItem from '../components/boardItem'
+import AddButton from '../components/addButton'
 
 class AddBoardItem extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class AddBoardItem extends Component {
       return (
         <div className='add-board'>
             <input type='text' onChange={this.checkValue.bind(this)} placeholder='Board name' className='add-board--input' />
-            {app.new_board_name != '' ? <button onClick={this.createBoard.bind(this)} className='add-board--btn-add'>Create board</button> : null}
+            {app.new_board_name != '' ? <AddButton label='Create' onclick={this.createBoard.bind(this)} /> : null}
         </div>
       )
     }
