@@ -4,12 +4,16 @@ header {
   background: $blue-med;
   position: relative;
   flex: none;
+  box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.4);
+  z-index: 1;
 
   .site-name{
     float: right;
     height: $header-height;
     line-height: $header-height;
     padding: 0 20px 0 0;
-    color: $white;
+    color: $blue-light;
+    font-family: $nt-heading-font;
+    font-size: 20px;
   }
 }

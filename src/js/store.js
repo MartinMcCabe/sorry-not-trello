@@ -16,7 +16,7 @@ const defaultState = {
       board: 'welcome'
     },
     'another_list':{
-      name:'Some list',
+      name:'In progress list',
       board: 'welcome'
     }
   },
@@ -24,22 +24,26 @@ const defaultState = {
     'todoItem':{
       name: 'this is a card',
       description: '',
-      list: 'first_todo_list'
+      list: 'first_todo_list',
+      pos: 0
     },
     'todoItem1':{
-      name: 'this is also a card',
+      name: 'add items to the second list',
       description: '',
-      list: 'another_list'
+      list: 'another_list',
+      pos: 0
     },
     'todoItem2':{
-      name: 'click a card to edit it',
+      name: 'sorry, you can\'t click a card to edit it 😒',
       description: '',
-      list: 'first_todo_list'
+      list: 'first_todo_list',
+      pos: 1
     },
     'todoItem3':{
       name: 'drag a card to another list',
       description: '',
-      list: 'first_todo_list'
+      list: 'first_todo_list',
+      pos: 2
     }
   },
   app:{

@@ -8,6 +8,10 @@
     margin: 0 5px 0 0;
   }
 
+  &.is-over {
+    border: 1px dashed deeppink;
+  }
+
   &--content {
     display: flex;
     flex-direction: column;

@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { DragDropContext } from 'react-dnd'
+import HTML5Backend from 'react-dnd-html5-backend'
 // import {
 //   //
 // } from '../actions/actionCreators'
 
 import List from './list'
 import AddList from './addList'
+import CustomDragLayer from './customDragLayer'
 
 class Board extends Component {
   constructor(props) {
@@ -26,13 +28,14 @@ class Board extends Component {
   }
 
   render() {
-    const { boards, lists } = this.props
+    const { boards, lists, cards } = this.props
     const { id } = this.props.match.params
 
     return (
       <div className='board'>
         <div className='board--container'>
           <div className='board--content'>
+            <CustomDragLayer cards={cards}/>
             <div className='board--name'>{boards[id].name}</div>
             <div className='board--lists-wrapper'>
               <div className='board--lists-container'>
@@ -48,11 +51,13 @@ class Board extends Component {
 }
 
 function mapStateToProps( state ){
-  const { boards, lists } = state
+  const { boards, lists, cards } = state
   return {
     boards,
-    lists
+    lists,
+    cards
   }
 }
 
+Board = DragDropContext(HTML5Backend)(Board)
 export default connect(mapStateToProps)(Board)
