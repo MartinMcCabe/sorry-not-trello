@@ -8,7 +8,10 @@ import {
   CREATE_BOARD,
   CREATE_LIST,
   CREATE_CARD,
-  MOVE_CARD
+  MOVE_CARD,
+  EDIT_CARD,
+  SAVE_CARD,
+  DELETE_CARD
 } from './actionTypes'
 import fetch from 'isomorphic-fetch'
 
@@ -81,5 +84,28 @@ export const moveCard = (card_id, list_id, pos) => {
     card_id,
     list_id,
     pos
+  }
+}
+
+export const editCard = (card_id) => {
+  return {
+    type: EDIT_CARD,
+    card_id
+  }
+}
+
+export const saveCard = (card_id, name, description) => {
+  return {
+    type: SAVE_CARD,
+    card_id,
+    name,
+    description
+  }
+}
+
+export const deleteCard = (card_id) => {
+  return {
+    type: DELETE_CARD,
+    card_id
   }
 }

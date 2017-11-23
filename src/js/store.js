@@ -53,7 +53,8 @@ const defaultState = {
     new_list_name: '',
     add_card_active: false,
     new_card_name: '',
-    current_list_id: ''
+    current_list_id: '',
+    edit_card: null
   }
 }
 

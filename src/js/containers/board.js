@@ -2,17 +2,30 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { DragDropContext } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
-// import {
-//   //
-// } from '../actions/actionCreators'
+
+import {
+  saveCard,
+  deleteCard
+} from '../actions/actionCreators'
 
 import List from './list'
 import AddList from './addList'
 import CustomDragLayer from './customDragLayer'
+import Card from '../components/card'
 
 class Board extends Component {
   constructor(props) {
     super(props)
+  }
+
+  saveCard(card, name, description){
+    this.props.dispatch(saveCard(card, name, description))
+  }
+
+  deleteCard (card) {
+    if(confirm('Delete this card?')){
+      this.props.dispatch(deleteCard(card))
+    }
   }
 
   renderLists(key) {
@@ -28,7 +41,7 @@ class Board extends Component {
   }
 
   render() {
-    const { boards, lists, cards } = this.props
+    const { boards, lists, cards, app } = this.props
     const { id } = this.props.match.params
 
     return (
@@ -43,6 +56,7 @@ class Board extends Component {
                   <AddList board={boards[id]} id={id} />
               </div>
             </div>
+            {app.edit_card ? <Card onSave={this.saveCard.bind(this)} id={app.edit_card} cards={cards} onDelete={this.deleteCard.bind(this)} /> : null}
           </div>
         </div>
       </div>
@@ -51,11 +65,12 @@ class Board extends Component {
 }
 
 function mapStateToProps( state ){
-  const { boards, lists, cards } = state
+  const { boards, lists, cards, app } = state
   return {
     boards,
     lists,
-    cards
+    cards,
+    app
   }
 }
 

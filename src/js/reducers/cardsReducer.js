@@ -1,6 +1,8 @@
 import {
   CREATE_CARD,
-  MOVE_CARD
+  MOVE_CARD,
+  SAVE_CARD,
+  DELETE_CARD
   } from '../actions/actionTypes'
 
 
@@ -39,6 +41,19 @@ import {
             })
           })
           return newstate
+
+      case SAVE_CARD:
+          return Object.assign({}, state, {
+            [action.card_id]: Object.assign({}, state[action.card_id], {
+                name: action.name,
+                description: action.description
+              })
+          })
+
+      case DELETE_CARD:
+          let cards = Object.assign({}, state)
+          delete cards[action.card_id]
+          return cards
 
       default:
         return state

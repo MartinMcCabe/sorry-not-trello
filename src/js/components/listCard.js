@@ -31,12 +31,15 @@ class ListCard extends Component {
   }
 
   render() {
-    const { connectDragSource, isDragging, card, id } = this.props
+    const { connectDragSource, isDragging, card, id, onclick, onDelete } = this.props
     var dragClass = isDragging ? 'is-dragging' : ''
     const classes = `list-card ${dragClass}`
 
     return connectDragSource(
-      <div className={classes}>{card.name}</div>
+      <div className={classes} onClick={()=>onclick(id)}>
+        {card.name}
+        <button onClick={(e)=> { e.preventDefault(); e.stopPropagation(); onDelete(id)}} className='btn-delete dark' ></button>
+      </div>
     )
   }
 }

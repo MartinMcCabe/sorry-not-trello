@@ -6,7 +6,9 @@ import { findDOMNode } from 'react-dom'
 
 import {
   activateAddCard,
-  moveCard
+  moveCard,
+  editCard,
+  deleteCard
 } from '../actions/actionCreators'
 
 import ListCard from '../components/listCard'
@@ -69,6 +71,16 @@ class List extends Component {
     dispatch(activateAddCard(id))
   }
 
+  editCard (card) {
+    this.props.dispatch(editCard(card))
+  }
+
+  deleteCard(card){
+    if(confirm('Delete this card?')){
+      this.props.dispatch(deleteCard(card))
+    }
+  }
+
   render() {
     const { cards, list, id, connectDropTarget, isOver, canDrop } = this.props
     const { placeholderPos } = this.state
@@ -87,7 +99,7 @@ class List extends Component {
           cardsArr.push( <ListCardPlaceholder key='placeholdercard' /> )
         }
 
-        cardsArr.push( <ListCard key={key} id={key} card={cards[key]} /> )
+        cardsArr.push( <ListCard key={key} id={key} card={cards[key]} onclick={this.editCard.bind(this)} onDelete={this.deleteCard.bind(this)}/> )
 
         if( placeholderPos === i && isOver && canDrop) {
           cardsArr.push( <ListCardPlaceholder key='placeholdercard' /> )

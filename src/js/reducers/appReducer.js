@@ -7,7 +7,10 @@ import {
   SET_CARD_NAME_VALUE,
   CREATE_BOARD,
   CREATE_LIST,
-  CREATE_CARD
+  CREATE_CARD,
+  EDIT_CARD,
+  SAVE_CARD,
+  DELETE_CARD
 } from '../actions/actionTypes'
 
 
@@ -61,6 +64,17 @@ const appReducer = (state={}, action) => {
       return Object.assign({}, state, {
         new_card_name: '',
         add_card_active: false
+      })
+
+    case EDIT_CARD:
+      return Object.assign({}, state, {
+        edit_card: action.card_id
+      })
+
+      case SAVE_CARD:
+      case DELETE_CARD:
+      return Object.assign({}, state, {
+        edit_card: null
       })
 
     default:

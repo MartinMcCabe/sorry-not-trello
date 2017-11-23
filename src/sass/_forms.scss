@@ -1,4 +1,4 @@
-input[type='text'] {
+input[type='text'], textarea {
   border: 1px solid $white;
   background: none;
   color: $white;
@@ -20,7 +20,7 @@ input[type='text'] {
   }
 }
 
-button.btn-add {
+button.btn-add, .btn-save {
   width: auto;
   background: none;
   border: 1px solid $white;
@@ -48,3 +48,15 @@ button.btn-add {
     }
   }
 }
+
+.btn-delete{
+  color: $grey;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  &:after{
+    content: '🗑'
+  }
+}
+
